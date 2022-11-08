@@ -4,7 +4,7 @@ import React from "react"
 import HomeScreen from "../Screens/HomeScreen"
 
 type HomeStackParamList = {
-	Home: undefined
+	HomeScreen: undefined
 }
 
 const HomeStack = createNativeStackNavigator<HomeStackParamList>()
@@ -12,7 +12,7 @@ const HomeStack = createNativeStackNavigator<HomeStackParamList>()
 const HomeStackScreens = () => {
 	return (
 		<HomeStack.Navigator>
-			<HomeStack.Screen name="Home" component={HomeScreen} />
+			<HomeStack.Screen name="HomeScreen" component={HomeScreen} />
 		</HomeStack.Navigator>
 	)
 }

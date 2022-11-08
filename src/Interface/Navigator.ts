@@ -1,3 +1,7 @@
 export type RootStackParamList = {
-    Home: undefined
+	HomeScreen: undefined
+	JokesScreen: undefined
+    RankingScreen: undefined
+	ProfileScreen: undefined
+
 }
