@@ -20,10 +20,10 @@ const RankingStackScreens = () => {
 					headerTitleAlign: "center",
 					headerShadowVisible: false,
 					headerStyle: {
-						backgroundColor: "#F6F8FA"
+						backgroundColor: "white"
 					},
 					headerTitle: (props) => (
-						<Text fontWeight={"bold"} color="#FF9839" fontSize={"lg"} textAlign="center">
+						<Text fontWeight={"bold"} color="#F95F5E" fontSize={"xl"} textAlign="center">
 							{props.children}
 						</Text>
 					)

@@ -18,7 +18,7 @@ const RankingTabItem = ({ title, setActive, activeId, id }: Props) => {
 
 	return (
 		<Pressable onPress={setIdActive} display="flex">
-			<Text fontSize={"md"} fontWeight={"bold"} color={isActive ? "#FF9839" : "black"} textTransform="capitalize" px="1" pb="1">
+			<Text fontSize={"lg"} fontWeight={"bold"} color={isActive ? "#FF9839" : "black"} textTransform="capitalize" px="1" pb="1">
 				{title}
 			</Text>
 			<PresenceTransition

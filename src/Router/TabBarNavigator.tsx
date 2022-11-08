@@ -22,8 +22,8 @@ const TabBarNavigator = () => {
 				tabBarActiveTintColor: "#FF9839",
 				tabBarInactiveTintColor: "#A4A4A4",
 				tabBarStyle: {
-					borderTopStartRadius: 16,
-					borderTopEndRadius: 16
+					borderTopStartRadius: 24,
+					borderTopEndRadius: 24
 				}
 			}}>
 			<Tab.Screen
