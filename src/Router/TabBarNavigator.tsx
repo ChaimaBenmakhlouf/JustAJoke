@@ -20,7 +20,11 @@ const TabBarNavigator = () => {
 					fontWeight: "bold"
 				},
 				tabBarActiveTintColor: "#FF9839",
-				tabBarInactiveTintColor: "#A4A4A4"
+				tabBarInactiveTintColor: "#A4A4A4",
+				tabBarStyle: {
+					borderTopStartRadius: 24,
+					borderTopEndRadius: 24
+				}
 			}}>
 			<Tab.Screen
 				name="Home"
