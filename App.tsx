@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import React from "react"
 import TabBarNavigator from "./src/Router/TabBarNavigator"
 
-export default function App() {
+export default function App() { 
 	const RootStack = createNativeStackNavigator()
 	return (
 		<NativeBaseProvider>
