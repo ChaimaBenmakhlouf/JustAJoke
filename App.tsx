@@ -4,10 +4,20 @@ import { NavigationContainer } from "@react-navigation/native"
 import React from "react"
 import TabBarNavigator from "./src/Router/TabBarNavigator"
 
+
 export default function App() {
+// Import to use gradients in the app
+const LinearGradient = require("expo-linear-gradient").LinearGradient
+
+const config = {
+	dependencies: {
+		"linear-gradient": LinearGradient
+	}
+}
+
 	const RootStack = createNativeStackNavigator()
 	return (
-		<NativeBaseProvider>
+		<NativeBaseProvider config={config}>
 			<NavigationContainer>
 				<RootStack.Navigator screenOptions={{ headerShown: false }}>
 					<RootStack.Group>
