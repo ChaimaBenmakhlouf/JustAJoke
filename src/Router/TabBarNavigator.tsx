@@ -2,13 +2,12 @@ import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomeStackScreens from "./Stacks/HomeStackScreens"
 import ProfilStackScreens from "./Stacks/ProfilStackScreens"
-import { AntDesign } from "@expo/vector-icons"
 import { Box, Center, Icon } from "native-base"
 import { Circle, Path } from "react-native-svg"
 import MyJokesStackScreens from "./Stacks/MyJokesStackScreens"
 import RankingStackScreens from "./Stacks/RankingStackScreens"
 import NewJokeModal from "./Screens/NewJokeModal"
-import { Entypo } from "@expo/vector-icons"
+import NewJokeScreenModal from "../Components/NewJokeScreenModal"
 
 const Tab = createBottomTabNavigator()
 
@@ -84,15 +83,7 @@ const TabBarNavigator = () => {
 				name="NewJoke"
 				component={NewJokeModal}
 				options={{
-					tabBarButton: () => (
-						<Center mx="4">
-							<Box height="8" width="8" borderRadius={"full"} bgColor="#FF9839">
-								<Center height="full">
-									<Icon as={Entypo} name="plus" color="white" size={6} fontWeight="bold" />
-								</Center>
-							</Box>
-						</Center>
-					)
+					tabBarButton: () => <NewJokeScreenModal />
 				}}
 			/>
 
