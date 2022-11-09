@@ -18,7 +18,17 @@ const HomeScreen = () => {
 				</HStack>
 
 				<Box py="4" width="full">
-					<JokeCard />
+					<JokeCard isJokeDay={true} />
+
+					<Text fontSize={"lg"} fontWeight="bold" py="4">
+						Toutes dernières blagues
+					</Text>
+					<VStack space="3.5">
+						<JokeCard isJokeDay={false} />
+						<JokeCard isJokeDay={false} />
+						<JokeCard isJokeDay={false} />
+						<JokeCard isJokeDay={false} />
+					</VStack>
 				</Box>
 			</ScrollView>
 		</>
