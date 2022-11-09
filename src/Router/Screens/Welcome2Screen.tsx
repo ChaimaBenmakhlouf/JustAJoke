@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native"
-import { Box, Button, Center, Flex, HStack, Image, Text, VStack } from "native-base"
+import { Box, Center, Flex, HStack, Text, VStack, Button, Image } from "native-base"
 import React from "react"
 import { Dimensions } from "react-native"
 
-const WelcomeScreen = () => {
+const Welcome2Screen = () => {
 	const height = Dimensions.get("screen").height
 	const navigation = useNavigation()
 
@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
 				<Center pt="6">
 					<HStack space="2">
 						<Box height="1" width="7" bg="#F95F5E" />
-						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
+						<Box height="1" width="7" bg="#F95F5E" />
 						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
 						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
 						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
@@ -21,23 +21,24 @@ const WelcomeScreen = () => {
 				</Center>
 
 				<Center pt="10">
-					<Image source={require("../../../assets/onboarding1.png")} alt="onboarding first image" />
+					<Image source={require("../../../assets/onboarding2.png")} alt="onboarding first image" />
 				</Center>
 
 				<Center pt="10">
-					<Text fontSize={"xl"} fontWeight="bold">
-						Bienvenue<Text color="#F95F5E"> à toi ! 👋</Text>
+					<Text fontSize={"xl"} fontWeight="bold" px="16" textAlign={"center"}>
+						Découvre les blagues des autres<Text color="#F95F5E"> Jokers ! 🤡</Text>
 					</Text>
 				</Center>
 
 				<Center pt="10" px="8">
 					<VStack space="6">
 						<Text fontSize={"md"} textAlign="center">
-							Je t’explique le principe de l’application ne t’en fait pas, c’est simple. 😉
+							Lis les <Text fontWeight="bold">meilleures</Text> blagues du moment ou celles qui te sont recommandées.
 						</Text>
 
 						<Text fontSize={"md"} textAlign="center">
-							Tu peux gagner des JokeCoin facilement en postant <Text fontWeight="bold">2 blagues par jour.</Text>
+							Tente de monter dans le classement pour avoir la chance de gagner plus en visibilité et donc, en gain de{" "}
+							<Text fontWeight="bold">Tokens !</Text>
 						</Text>
 					</VStack>
 				</Center>
@@ -65,4 +66,4 @@ const WelcomeScreen = () => {
 	)
 }
 
-export default WelcomeScreen
+export default Welcome2Screen
