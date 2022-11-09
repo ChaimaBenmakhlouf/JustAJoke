@@ -8,4 +8,6 @@ export type RootStackParamList = {
 	Welcome2Screen: undefined
 	WalletWords: undefined
 	WalletConnexion: undefined
+	TabBar: undefined
+	OnboardingScreens: undefined
 }

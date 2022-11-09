@@ -42,7 +42,7 @@ const WelcomeScreen = () => {
 			</Box>
 
 			<Flex flexDir="row" alignItems={"center"} justifyContent="space-between" px="6">
-				<Text color="black" opacity="0.5">
+				<Text color="black" opacity="0.5" onPress={() => navigation.navigate("WalletWords")}>
 					Passer
 				</Text>
 				<Box

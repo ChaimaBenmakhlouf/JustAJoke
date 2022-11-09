@@ -1,21 +1,73 @@
 import { useNavigation } from "@react-navigation/native"
 import { Box, Center, Flex, HStack, Icon, Text, View, VStack, Pressable, Button } from "native-base"
-import React from "react"
+import React, { useContext, useMemo, useState } from "react"
 import { Dimensions } from "react-native"
 import { Path } from "react-native-svg"
+import { StateContext } from "../../Context/StateContext"
+
+interface SelectWord {
+	word: string
+	index: number
+}
 
 const WalletWordsScreen = () => {
 	const height = Dimensions.get("screen").height
 	const navigation = useNavigation()
+	const [selectedWords, setSelectedWords] = useState<SelectWord[]>([])
 	const words = ["pair", "spoon", "squeeze", "pass", "popular", "weapon", "old", "craft", "crawl", "behave", "tribe", "present"]
+	const { setUserConnected } = useContext(StateContext)
 
-	const WordItem = ({ text, index }: { text?: string; index: number }) => {
+	const selectWord = (word: string) => {
+		if (selectedWords.length >= 10) return
+		const selected: SelectWord = {
+			word,
+			index: selectedWords.length + 1
+		}
+		setSelectedWords((previousState) => [...previousState, selected])
+	}
+
+	const WordSelection = ({ text }: { text: string }) => {
+		const isWordUsed = useMemo(() => {
+			const isUsed = selectedWords.find((word) => word.word === text)
+			return !!isUsed
+		}, [selectedWords])
+
+		return (
+			<Pressable
+				onPress={() => {
+					if (text && !isWordUsed) {
+						selectWord(text)
+					}
+				}}>
+				<Box
+					px="3"
+					py="1"
+					mx="1"
+					my="1"
+					borderColor="#F0E6ED"
+					borderWidth={"1"}
+					borderRadius={"full"}
+					shadow="4"
+					style={{
+						shadowColor: "#F0E6ED"
+					}}>
+					<Text color={isWordUsed ? "red.600" : "black"} textDecorationLine={isWordUsed ? "line-through" : "unset"}>
+						{text}
+					</Text>
+				</Box>
+			</Pressable>
+		)
+	}
+
+	const WordItem = ({ index }: { index: number }) => {
+		const getCorrespondingWord = selectedWords.find((selected) => selected.index === index)?.word
+
 		return (
 			<HStack space="1" borderBottomColor={"white"} borderBottomWidth="1" mb="3">
 				<Text fontWeight={"bold"} color="white">
 					{index}
 				</Text>
-				{text && <Text>{text}</Text>}
+				{getCorrespondingWord && <Text color="white">{getCorrespondingWord}</Text>}
 			</HStack>
 		)
 	}
@@ -65,41 +117,27 @@ const WalletWordsScreen = () => {
 				<Center pt="10" px="8">
 					<Flex flexWrap={"wrap"} flexDir="row" alignItems={"center"} justifyContent="space-evenly">
 						{words.map((word) => (
-							<Box
-								key={word}
-								px="3"
-								py="1"
-								mx="1"
-								my="1"
-								borderColor="#F0E6ED"
-								borderWidth={"1"}
-								borderRadius={"full"}
-								shadow="4"
-								style={{
-									shadowColor: "#F0E6ED"
-								}}>
-								<Text color="black">{word}</Text>
-							</Box>
+							<WordSelection key={word} text={word} />
 						))}
 					</Flex>
 				</Center>
 
 				<Center pt="8" px="12">
-					<Box bg="#F95F5E" height="200" p="4" width="full" borderTopRadius={"xl"}>
+					<Box bg="#F95F5E" height={height - 530} p="4" width="full" borderTopRadius={"xl"}>
 						<HStack space="6">
-							<Box flex="1">
+							<Box flex="1" display="flex" justifyContent={"space-evenly"} flexDir="column" height="full">
 								{Array(5)
 									.fill(null)
 									.map((_, index) => (
-										<WordItem index={index + 1} />
+										<WordItem key={index + 1} index={index + 1} />
 									))}
 							</Box>
 
-							<Box flex="1">
+							<Box flex="1" display="flex" justifyContent={"space-evenly"} flexDir="column" height="full">
 								{Array(5)
 									.fill(null)
 									.map((_, index) => (
-										<WordItem index={index + 6} />
+										<WordItem key={index + 6} index={index + 6} />
 									))}
 							</Box>
 						</HStack>
@@ -108,7 +146,7 @@ const WalletWordsScreen = () => {
 			</Box>
 
 			<Flex flexDir="row" alignItems={"center"} justifyContent="space-between" px="6">
-				<Text color="black" opacity="0.5">
+				<Text color="black" opacity="0.5" onPress={() => navigation.navigate("TabBar")}>
 					Passer
 				</Text>
 				<Box
@@ -120,7 +158,16 @@ const WalletWordsScreen = () => {
 							end: [0.75, 0]
 						}
 					}}>
-					<Button bg="whiteAlpha.100" borderRadius={"full"} px="5" py="2" onPress={() => navigation.navigate("WalletWords")}>
+					<Button
+						bg="whiteAlpha.100"
+						borderRadius={"full"}
+						px="5"
+						py="2"
+						onPress={() => {
+							setUserConnected()
+							navigation.navigate("TabBar")
+						}}
+						isDisabled={selectedWords.length !== 10}>
 						Valider
 					</Button>
 				</Box>
