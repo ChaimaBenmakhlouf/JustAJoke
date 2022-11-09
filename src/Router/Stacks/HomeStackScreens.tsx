@@ -68,6 +68,7 @@ const HomeStackScreens = () => {
 				options={{
 					title: "Mes notifications",
 					headerTitleAlign: "center",
+					headerShadowVisible: false,
 					headerTitle: (props) => {
 						const titleSplit = props.children.split(" ")
 						return (
