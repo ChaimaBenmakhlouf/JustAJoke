@@ -1,13 +1,13 @@
 import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomeStackScreens from "./Stacks/HomeStackScreens"
+import ProfilStackScreens from "./Stacks/ProfilStackScreens"
 import { Box, Center, Icon } from "native-base"
+import { Circle, Path } from "react-native-svg"
 import MyJokesStackScreens from "./Stacks/MyJokesStackScreens"
 import RankingStackScreens from "./Stacks/RankingStackScreens"
-import ProfileStackScreens from "./Stacks/ProfileStackScreens"
 import NewJokeModal from "./Screens/NewJokeModal"
-import { Entypo } from "@expo/vector-icons"
-import { Circle, Path } from "react-native-svg"
+import NewJokeScreenModal from "../Components/NewJokeScreenModal"
 
 const Tab = createBottomTabNavigator()
 
@@ -20,7 +20,11 @@ const TabBarNavigator = () => {
 					fontWeight: "bold"
 				},
 				tabBarActiveTintColor: "#FF9839",
-				tabBarInactiveTintColor: "#A4A4A4"
+				tabBarInactiveTintColor: "#A4A4A4",
+				tabBarStyle: {
+					borderTopStartRadius: 24,
+					borderTopEndRadius: 24
+				}
 			}}>
 			<Tab.Screen
 				name="Home"
@@ -79,15 +83,7 @@ const TabBarNavigator = () => {
 				name="NewJoke"
 				component={NewJokeModal}
 				options={{
-					tabBarButton: () => (
-						<Center mx="4">
-							<Box height="8" width="8" borderRadius={"full"} bgColor="#FF9839">
-								<Center height="full">
-									<Icon as={Entypo} name="plus" color="white" size={6} fontWeight="bold" />
-								</Center>
-							</Box>
-						</Center>
-					)
+					tabBarButton: () => <NewJokeScreenModal />
 				}}
 			/>
 
@@ -126,7 +122,7 @@ const TabBarNavigator = () => {
 			/>
 			<Tab.Screen
 				name="Profile"
-				component={ProfileStackScreens}
+				component={ProfilStackScreens}
 				options={{
 					tabBarIcon: ({ size, focused }) => (
 						<Icon size={size} viewBox="0 0 16 20">
