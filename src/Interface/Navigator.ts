@@ -1,6 +1,7 @@
 export type RootStackParamList = {
 	HomeScreen: undefined
 	JokesScreen: undefined
-  RankingScreen: undefined
+	NotificationsScreen: undefined
+	RankingScreen: undefined
 	Profil: undefined
 }
