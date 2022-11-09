@@ -80,7 +80,21 @@ const HomeStackScreens = () => {
 								</Text>
 							</HStack>
 						)
-					}
+					},
+					headerBackVisible: false,
+					headerLeft: () => (
+						<Pressable onPress={navigation.goBack}>
+							<Icon viewBox="0 0 29 29" size={29}>
+								<Path
+									d="M16.0708 10.6333L12.7952 13.675C12.2804 14.153 12.2804 14.9678 12.7952 15.4459L16.0708 18.4875M14.5 2.41667C7.82655 2.41667 2.41666 7.82656 2.41666 14.5C2.41666 21.1734 7.82655 26.5833 14.5 26.5833C21.1734 26.5833 26.5833 21.1734 26.5833 14.5C26.5833 7.82656 21.1734 2.41667 14.5 2.41667Z"
+									stroke="#222222"
+									strokeWidth="1.8125"
+									strokeLinecap="round"
+									fill="white"
+								/>
+							</Icon>
+						</Pressable>
+					)
 				}}
 			/>
 		</HomeStack.Navigator>
