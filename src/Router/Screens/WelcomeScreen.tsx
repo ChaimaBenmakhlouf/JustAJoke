@@ -15,8 +15,6 @@ const WelcomeScreen = () => {
 						<Box height="1" width="7" bg="#F95F5E" />
 						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
 						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
-						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
-						<Box height="1" width="7" bg="#F95F5E" opacity="0.4" />
 					</HStack>
 				</Center>
 
