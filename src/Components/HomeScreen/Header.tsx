@@ -4,7 +4,7 @@ import { AntDesign } from "@expo/vector-icons"
 
 const Header = () => {
 	return (
-		<VStack bg="white" p="4" space="4" borderBottomRadius={"3xl"} shadow="2">
+		<VStack bg="white" p="4" space="4" borderBottomRadius={"3xl"} shadow="2" zIndex={10}>
 			<VStack space="0.5">
 				<Text fontSize={"xl"} fontWeight="bold">
 					Bon retour,

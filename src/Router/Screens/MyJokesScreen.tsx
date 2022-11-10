@@ -7,7 +7,7 @@ import MyJokeCard from "../../Components/MyJokesScreen/MyJokeCard"
 const MyJokesScreen = () => {
 	return (
 		<>
-			<Box bg="white" borderBottomRadius="3xl" shadow="4" height="4" width="full" />
+			<Box bg="white" borderBottomRadius="3xl" shadow="4" height="4" width="full" zIndex={10} />
 			<ScrollView>
 				<Box p="4">
 					<VStack space="6" bg="white" p="4" borderRadius={"xl"}>
