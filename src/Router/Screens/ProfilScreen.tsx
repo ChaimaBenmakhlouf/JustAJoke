@@ -1,5 +1,5 @@
-import { View, Avatar, Text, Flex, Box } from "native-base"
-import { StyleSheet } from 'react-native';
+import { View, Avatar, Text, Flex, Box, Center, HStack, Divider } from "native-base"
+import { StyleSheet } from "react-native"
 import React from "react"
 import ProfilList from "../../Components/ProfilList"
 
@@ -18,7 +18,7 @@ const stats = [
 		id: 3,
 		number: 761,
 		name: "ETH"
-	},
+	}
 ]
 
 const tags = [
@@ -33,59 +33,86 @@ const tags = [
 	{
 		id: 3,
 		name: "Décadent"
-	},
+	}
 ]
 
 const styles = StyleSheet.create({
 	container: {
-	  backgroundColor: '#F95F5E',
-	  color: 'white',
-	  borderRadius: 40,
-	  width: 110,
-	  height: 35
-	},
-  });
-
+		backgroundColor: "#F95F5E",
+		color: "white",
+		borderRadius: 40,
+		width: 110,
+		height: 35
+	}
+})
 
 const ProfilScreen = () => {
-	return  (
-	<View>
-		<View style={{ alignItems: 'center', justifyContent: 'center', paddingTop: 190 }}>
+	return (
+		<Box p="4">
+			<Center>
+				<Avatar bg="green.700" size={"xl"} marginTop="50">
+					EL
+				</Avatar>
 
-			<Avatar bg="green.700" size={"xl"} marginTop="50">EL</Avatar>
+				<HStack space="2" flexDir="column" alignItems={"center"} pt="4">
+					<Text fontWeight={"bold"} fontSize={"lg"}>
+						Evangelineaire
+					</Text>
+					<Text fontSize={"md"} color="#5C5C5C">
+						Enchantier je m'apelle teuse
+					</Text>
+				</HStack>
 
-			<View style={{ alignItems: 'center', marginTop: 20 }}>
-				<Text fontWeight={"bold"} fontSize={"lg"}>Evangelineaire</Text>
-				<Text fontSize={"lg"} style={{ marginTop: 3 }}>Enchantier je m'apelle teuse</Text>
-			</View>
+				<Flex marginTop={2} flexDir="row">
+					{stats.map((stat, index) => {
+						if (index !== 2) {
+							return (
+								<Flex alignItems="center" flexDir="row">
+									<Box key={stat.id} display={"flex"} alignItems="center" margin={5}>
+										<Text fontSize={"md"} fontWeight="bold">
+											{stat.number}
+										</Text>
+										<Text fontSize={"md"}>{stat.name}</Text>
+									</Box>
+									<Divider orientation="vertical" h="50" />
+								</Flex>
+							)
+						}
+						return (
+							<Box key={stat.id} display={"flex"} alignItems="center" margin={5}>
+								<Text fontSize={"md"} fontWeight="bold">
+									{stat.number}
+								</Text>
+								<Text fontSize={"md"}>{stat.name}</Text>
+							</Box>
+						)
+					})}
+				</Flex>
 
-			<Flex marginTop={2} flexDir="row">
-				{stats.map((stat) => {
-				return (
-					<Box key={stat.id} display={"flex"} alignItems="center" margin={5}>
-						<Text fontSize={"lg"} >{stat.number}</Text>
-						<Text fontSize={"lg"} >{stat.name}</Text>
-					</Box>
-				);
-				})}
-			</Flex>
-
-			<Flex flexDir="row" justifyContent={"space-around"} marginRight={3}>
-				{tags.map((tag) => {
-				return (
-					<Box key={tag.id}>
-						<Text textAlign={"center"} style={styles.container} margin={5} paddingTop={"0.5"} fontSize={"lg"} key={tag.id}>{tag.name}</Text>
-					</Box>
-				);
-				})}
-			</Flex>
-
-			<View marginTop={10}> 
-				<ProfilList></ProfilList>
-			</View>
-
-		</View>
-	</View>
+				<Flex flexDir="row" justifyContent={"space-between"} pt="4">
+					{tags.map((tag) => {
+						return (
+							<Box
+								key={tag.id}
+								position="relative"
+								display="flex"
+								alignItems="center"
+								justifyContent={"center"}
+								bg="#F95F5E"
+								borderRadius="full"
+								py="1"
+								px="4"
+								mx="2">
+								<Text color="white" fontSize={"md"} key={tag.id}>
+									{tag.name}
+								</Text>
+							</Box>
+						)
+					})}
+				</Flex>
+			</Center>
+			<ProfilList />
+		</Box>
 	)
 }
 
