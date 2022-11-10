@@ -23,7 +23,9 @@ const TabBarNavigator = () => {
 				tabBarInactiveTintColor: "#A4A4A4",
 				tabBarStyle: {
 					borderTopStartRadius: 24,
-					borderTopEndRadius: 24
+					borderTopEndRadius: 24,
+					paddingVertical: 5,
+					paddingBottom: 4
 				}
 			}}>
 			<Tab.Screen
@@ -31,7 +33,7 @@ const TabBarNavigator = () => {
 				component={HomeStackScreens}
 				options={{
 					tabBarIcon: ({ size, focused }) => (
-						<Icon size={size} viewBox="0 0 21 21">
+						<Icon size={size - 6} viewBox="0 0 21 21">
 							{focused ? (
 								<Path
 									d="M1 9.43841C1 8.21422 1.56058 7.05744 2.52142 6.29888L8.02142 1.95677C9.47466 0.809478 11.5253 0.809479 12.9786 1.95677L18.4786 6.29888C19.4394 7.05744 20 8.21422 20 9.43841V16C20 18.2091 18.2091 20 16 20H14.5C13.9477 20 13.5 19.5523 13.5 19V16C13.5 14.8954 12.6046 14 11.5 14H9.5C8.39543 14 7.5 14.8954 7.5 16V19C7.5 19.5523 7.05228 20 6.5 20H5C2.79086 20 1 18.2091 1 16L1 9.43841Z"
@@ -57,7 +59,7 @@ const TabBarNavigator = () => {
 				component={MyJokesStackScreens}
 				options={{
 					tabBarIcon: ({ size, focused }) => (
-						<Icon size={size} viewBox="0 0 20 25">
+						<Icon size={size - 6} viewBox="0 0 20 25">
 							{focused ? (
 								<Path
 									d="M12.1418 1.71052C12.1392 1.61736 12.0375 1.5567 11.9575 1.6045C7.72209 4.13482 7.80053 10.4822 7.85109 11.6323C7.8549 11.7191 7.77282 11.7803 7.69426 11.7433C7.20496 11.5129 5.803 10.6451 5.72555 8.24095C5.72255 8.14765 5.6219 8.08768 5.5416 8.13527C3.08928 9.58872 1.44443 12.2732 1.44443 15.25C1.44443 19.8064 5.27488 23.5 10 23.5C14.7251 23.5 18.5556 19.8064 18.5556 15.25C18.5555 8.63061 12.2981 7.20705 12.1418 1.71052Z"
@@ -92,7 +94,7 @@ const TabBarNavigator = () => {
 				component={RankingStackScreens}
 				options={{
 					tabBarIcon: ({ size, focused }) => (
-						<Icon size={size} viewBox="0 0 25 23">
+						<Icon size={size - 6} viewBox="0 0 25 23">
 							{focused ? (
 								<>
 									<Path
@@ -124,7 +126,7 @@ const TabBarNavigator = () => {
 				component={ProfilStackScreens}
 				options={{
 					tabBarIcon: ({ size, focused }) => (
-						<Icon size={size} viewBox="0 0 16 20">
+						<Icon size={size - 6} viewBox="0 0 16 20">
 							{focused ? (
 								<>
 									<Circle r="4" transform="matrix(-1 0 0 1 8.00024 5.5)" fill="#FF9839" fillOpacity="0.6" stroke="#FF9839" strokeWidth="1.5" />
