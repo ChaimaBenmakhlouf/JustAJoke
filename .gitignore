@@ -16,5 +16,6 @@ web-build/
 # wakatime
 .wakatime-project
 
+*.lock
+package-lock.json
 yarn.lock
-package.json
