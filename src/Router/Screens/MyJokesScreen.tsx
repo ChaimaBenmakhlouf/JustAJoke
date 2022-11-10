@@ -1,11 +1,10 @@
-import { Box, Button, Flex, HStack, Image, Pressable, ScrollView, Text, TextArea, VStack } from "native-base"
+import { Box, Button, Flex, HStack, Icon, Image, Pressable, ScrollView, Text, TextArea, VStack } from "native-base"
 import React, { useState } from "react"
 import Constants from "expo-constants"
+import { Path } from "react-native-svg"
+import MyJokeCard from "../../Components/MyJokesScreen/MyJokeCard"
 
 const MyJokesScreen = () => {
-	const [data, setData] = useState([{ name: "", response: "" }])
-	const [name, setName] = useState("")
-	const [response, setResponse] = useState("")
 	return (
 		<>
 			<Box bg="white" borderBottomRadius="3xl" shadow="4" height="4" width="full" />
@@ -35,137 +34,15 @@ const MyJokesScreen = () => {
 						</Flex>
 					</VStack>
 
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 12 Novembre
-						</Text>
+					<MyJokeCard title="Blague du 12 Novembre" question="Qu'est-ce qu'un cochon qui passe la douane" answer="Un passport" likes={25} />
 
-						<Text fontSize={"md"} color="black" pt="4">
-							Qu'est-ce qu'un cochon qui passe la douane ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Un passeport
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">25</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
-
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 11 Novembre
-						</Text>
-
-						<Text fontSize={"md"} color="black" pt="4">
-							Qui est l'acteur à la main verte ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Jean Dujardin
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">145</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
-
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 11 Novembre
-						</Text>
-
-						<Text fontSize={"md"} color="black" pt="4">
-							Qui est l'acteur à la main verte ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Jean Dujardin
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">145</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
-
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 11 Novembre
-						</Text>
-
-						<Text fontSize={"md"} color="black" pt="4">
-							Qui est l'acteur à la main verte ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Jean Dujardin
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">145</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
-
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 11 Novembre
-						</Text>
-
-						<Text fontSize={"md"} color="black" pt="4">
-							Qui est l'acteur à la main verte ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Jean Dujardin
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">145</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
-
-					<Box p="4" mt="2" bg="white" borderRadius={"xl"} shadow="1">
-						<Text fontWeight={"bold"} fontSize="lg">
-							Blague du 11 Novembre
-						</Text>
-
-						<Text fontSize={"md"} color="black" pt="4">
-							Qui est l'acteur à la main verte ?
-						</Text>
-						<Text fontSize={"xs"} color="#FF9839" pt="4" fontWeight={"bold"}>
-							Jean Dujardin
-						</Text>
-
-						<Flex justifyContent={"flex-end"} alignItems="flex-end">
-							<Pressable px="4" py="2" bg="white" borderColor="black" borderWidth={"1"} borderRadius={"full"}>
-								<HStack space="1.5" alignItems="center">
-									<Text color="black">145</Text>
-									<Image source={require("../../../assets/like.png")} alt="like button" />
-								</HStack>
-							</Pressable>
-						</Flex>
-					</Box>
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
+					<MyJokeCard title="Blague du 11 Novembre" question="Qui est l'acteur à la main verte ?" answer="Jean Dujardin" likes={145} />
 				</Box>
 			</ScrollView>
 		</>
