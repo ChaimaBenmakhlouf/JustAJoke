@@ -12,8 +12,9 @@ const HomeStack = createNativeStackNavigator<ProfilStackParamList>()
 const ProfilStackScreens = () => {
 	return (
 		<HomeStack.Navigator>
-			<HomeStack.Screen name="Profil" component={ProfilScreen} />
+			<HomeStack.Screen name="Profil" component={ProfilScreen} options={{headerShown: false}} />
 		</HomeStack.Navigator>
+		
 	)
 }
 

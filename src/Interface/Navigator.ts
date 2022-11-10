@@ -3,7 +3,7 @@ export type RootStackParamList = {
 	JokesScreen: undefined
 	NotificationsScreen: undefined
 	RankingScreen: undefined
-	Profil: undefined
+	ProfilScreen: undefined
 	WelcomeScreen: undefined
 	Welcome2Screen: undefined
 	WalletWords: undefined

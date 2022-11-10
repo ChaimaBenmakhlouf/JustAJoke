@@ -7,6 +7,7 @@ import { Circle, Path } from "react-native-svg"
 import MyJokesStackScreens from "./Stacks/MyJokesStackScreens"
 import RankingStackScreens from "./Stacks/RankingStackScreens"
 import NewJokeModal from "./Screens/NewJokeModal"
+import { Entypo } from "@expo/vector-icons"
 import NewJokeScreenModal from "../Components/NewJokeScreenModal"
 
 const Tab = createBottomTabNavigator()
@@ -122,9 +123,10 @@ const TabBarNavigator = () => {
 				}}
 			/>
 			<Tab.Screen
-				name="Profile"
+				name="Profil"
 				component={ProfilStackScreens}
 				options={{
+					headerShown: false,
 					tabBarIcon: ({ size, focused }) => (
 						<Icon size={size - 6} viewBox="0 0 16 20">
 							{focused ? (
